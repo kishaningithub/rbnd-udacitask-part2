@@ -7,12 +7,15 @@ class UdaciList
   end
   def add(type, description, options={})
     type = type.downcase
+    initLength = @items.length
     @items.push TodoItem.new(description, options) if type == "todo"
     @items.push EventItem.new(description, options) if type == "event"
     @items.push LinkItem.new(description, options) if type == "link"
+    finalLength = @items.length
+    raise UdaciListErrors::InvalidItemType if initLength == finalLength
   end
   def delete(index)
-    @items.delete_at(index - 1)
+    raise UdaciListErrors::IndexExceedsListSize if @items.delete_at(index - 1).nil?
   end
   def all
     puts "-" * @title.length

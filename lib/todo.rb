@@ -6,6 +6,7 @@ class TodoItem
     @description = description
     @due = options[:due] ? Date.parse(options[:due]) : options[:due]
     @priority = options[:priority]
+    validate_priority @priority
   end
   def details
     format_description(@description) + "due: " +
