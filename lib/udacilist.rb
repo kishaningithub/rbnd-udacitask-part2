@@ -3,6 +3,7 @@ class UdaciList
 
   def initialize(options={})
     @title = options[:title]
+    @title = "Untitled List" if @title.nil?
     @items = []
   end
   def add(type, description, options={})
