@@ -6,10 +6,13 @@ class LinkItem
     @description = url
     @site_name = options[:site_name]
   end
+  def self.type
+    "link"
+  end
   def format_name
     @site_name ? @site_name : ""
   end
   def details
-    [format_description(@description),  "site name: " + format_name]
+    [self.class.type, format_description(@description),  "site name: " + format_name]
   end
 end

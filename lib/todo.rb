@@ -8,11 +8,14 @@ class TodoItem
     @priority = options[:priority]
     validate_priority @priority
   end
+  def self.type
+    "todo"
+  end
   def validate_priority(priority)
     raise UdaciListErrors::InvalidPriorityValue if format_priority(priority).nil?
   end
   def details
-    [format_description(@description), "due: " +
+    [self.class.type, format_description(@description), "due: " +
     format_date(@due, nil, "No due date") +
     format_priority(@priority)]
   end
