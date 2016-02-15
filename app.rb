@@ -49,3 +49,11 @@ new_list.all
 # DEMO FILTER BY ITEM TYPE
 # ------------------------
 new_list.filter("event")
+
+# Additional Features
+# 1. Delete by item itemtype
+puts "Before delete by item type"
+new_list.all
+new_list.delete_by_type("link")
+puts "After delete by item type"
+new_list.all

@@ -17,6 +17,9 @@ class UdaciList
   def delete(index)
     raise UdaciListErrors::IndexExceedsListSize if @items.delete_at(index - 1).nil?
   end
+  def delete_by_type(item_type)
+    @items.delete_if{|item| item.class.type == item_type}
+  end
   def all
     rows = @items.map.with_index {|item, i| [i + 1] + item.details}.to_a
     output = Terminal::Table.new :title => @title, :rows => rows
