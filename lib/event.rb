@@ -8,6 +8,6 @@ class EventItem
     @end_date = Date.parse(options[:end_date]) if options[:end_date]
   end
   def details
-    format_description(@description) + "event dates: " + format_date(@start_date, @end_date, "N/A")
+   [format_description(@description), "event dates: " + format_date(@start_date, @end_date, "N/A")]
   end
 end

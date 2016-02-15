@@ -19,11 +19,8 @@ class UdaciList
     raise UdaciListErrors::IndexExceedsListSize if @items.delete_at(index - 1).nil?
   end
   def all
-    puts "-" * @title.length
-    puts @title
-    puts "-" * @title.length
-    @items.each_with_index do |item, position|
-      puts "#{position + 1}) #{item.details}"
-    end
+    rows = @items.map.with_index {|item, i| [i + 1] +   item.details}.to_a
+    output = Terminal::Table.new :title => @title, :rows => rows
+    puts output
   end
 end

@@ -16,7 +16,4 @@ module Listable
     value = "" if !priority
     return value
   end
-  def validate_priority(priority)
-    raise UdaciListErrors::InvalidPriorityValue if format_priority(priority).nil?
-  end
 end
