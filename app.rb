@@ -52,8 +52,13 @@ new_list.filter("event")
 
 # Additional Features
 # 1. Delete by item itemtype
-puts "Before delete by item type"
 new_list.all
+puts "Deleting 'link' item type"
 new_list.delete_by_type("link")
-puts "After delete by item type"
 new_list.all
+
+new_list.change_priority(2, "high")
+puts "changing priority"
+new_list.all
+# new_list.change_priority(7, "low") # Throws an IndexExceedsListSize error
+# new_list.change_priority(2, "abc") # throws an InvalidPriorityValue error

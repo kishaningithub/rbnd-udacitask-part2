@@ -1,13 +1,25 @@
 # What you added to Udacitask 2.0
 # -------------------------------------------------------
 1. What is the gem of your choice and how did you use it?
+   Have used terminal-table to nicely format the output
 2. Describe the 2 features you added to the project.
-  a) Feature 1...
-  b) Feature 2...
+  a) Feature 1. Delete by item type
+  b) Feature 2. Change the priority levels of items
 
 # REFLECTIONS
 # -------------------------------------------------------
 1. How long did you spend working on this project?
+   1 week. 15 mins day
 2. What was the most rewarding challenge you conquered?
+   Understanding the true nature of ! in method names
+   http://dablog.rubypal.com/2007/8/15/bang-methods-or-danger-will-rubyist
+   http://stackoverflow.com/questions/33449620/why-ruby-convention-is-not-followed-for-arraykeep-if
 3. What two additional features did you build? Why?
+   1) Delete by item type deletes multiple elements at once. This 
+      allowed be to have a confusion whether to user ! in the end 
+      of the method name or not as described in the above links
+      i have chosen not to.
+   2) Change the priority levels of items. Seemed intresting to reuse existing
+      errors(IndexExceedsListSize, InvalidPriorityValue) and reusing methods (validate_priority)
 4. Where do you still have room to grow?
+   1) Yes. Find intresting gems and use it for fun projects.

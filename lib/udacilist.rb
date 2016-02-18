@@ -20,6 +20,13 @@ class UdaciList
   def delete_by_type(item_type)
     @items.delete_if{|item| item.class.type == item_type}
   end
+  def change_priority(index, priority)
+    item = @items[index - 1]
+    raise UdaciListErrors::IndexExceedsListSize if item.nil?
+    if item.class == TodoItem then
+      item.change_priority(priority)
+    end
+  end
   def all
     rows = @items.map.with_index {|item, i| [i + 1] + item.details}.to_a
     output = Terminal::Table.new :title => @title, :rows => rows
