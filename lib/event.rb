@@ -11,6 +11,6 @@ class EventItem
     "event"
   end
   def details
-   [self.class.type, format_description(@description), "event dates: " + format_date(@start_date, @end_date, "N/A")]
+    [self.class.type, format_description(@description), "event dates: " + format_date(@start_date, @end_date, "N/A")]
   end
 end
